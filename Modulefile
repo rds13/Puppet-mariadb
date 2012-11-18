@@ -1,0 +1,10 @@
+name    'Enrise-Mariadb'
+version '0.1.0'
+source 'UNKNOWN'
+author  'Dolf Schimmel (Freeaqingme) / Enrise - www.enrise.com'
+license '3-Clause BSD license'
+summary 'Installs MariaDB'
+description 'Adds the MariaDB APT repository, installs MariaDB.'
+project_page 'http://www.github.com/Enrise/Puppet-MariaDB'
+
+dependency 'lab42/mysql', '>= 2.0'
