@@ -56,7 +56,7 @@ class mariadb (
     url       => $distro_url,
     distro    => $distro_code_name,
     repository=> 'main',
-    key       => true,
+    key       => 'dbart@askmonty.org',
     key_url   => '"http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0xCBCB082A1BB943DB"',
  }
 
