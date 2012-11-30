@@ -61,7 +61,7 @@ class mariadb (
  }
 
   class { "mysql" :
-    root_password          => $root_password,
+    root_password           => $root_password,
     my_class                => $my_class,
     source                  => $source,
     source_dir              => $source_dir,
