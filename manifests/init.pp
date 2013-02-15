@@ -60,6 +60,14 @@ class mariadb (
     key_url   => '"http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0xCBCB082A1BB943DB"',
  }
 
+ ->
+
+  exec {"mariadb_aptgetupdate":
+        command   => "apt-get update"
+  }
+
+  ->
+
   class { "mysql" :
     root_password           => $root_password,
     my_class                => $my_class,
