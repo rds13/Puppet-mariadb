@@ -62,7 +62,8 @@ class mariadb (
 
   exec {'mariadb_aptgetupdate':
     command   => 'apt-get update',
-    onlyif    => "/bin/bash -c x=\$(apt-cache policy | grep '${distro_url}' | wc -l); test \"\$x\" = '0'"
+    onlyif    => "/bin/bash -c 'x=\$(apt-cache madison ${package} | \
+                  grep \"${distro_url}\" | wc -l); test \"\$x\" = \"0\" -a \"\$x\" != \"\" '"
   }
 
   class { 'mysql' :
