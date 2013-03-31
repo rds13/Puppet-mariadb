@@ -1,5 +1,5 @@
 name    'Enrise-Mariadb'
-version '0.1.0'
+version '0.2.0'
 source 'UNKNOWN'
 author  'Dolf Schimmel (Freeaqingme) / Enrise - www.enrise.com'
 license '3-Clause BSD license'
