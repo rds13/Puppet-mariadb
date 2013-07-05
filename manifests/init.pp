@@ -8,7 +8,8 @@ class mariadb (
   }
 
   $distro_lc  = inline_template("<%= operatingsystem.downcase %>")
-  $distro_url = "http://mirrors.supportex.net/mariadb/repo/${mariadb::version}/${distro_lc}"
+  $repo_version = inline_template("<%=@version.to_s.match(/\d+.\d+/)[0] %>")
+  $distro_url = "http://mirrors.supportex.net/mariadb/repo/${repo_version}/${distro_lc}"
 
   if ( ( $::operatingsystem != 'debian' ) and ( $::operatingsystem != 'ubuntu' ) ) {
     fail( "Distro ${::operatingsystem} not supported." )
