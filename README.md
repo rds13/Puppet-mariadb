@@ -6,13 +6,27 @@ This is the MariaDB module for [Puppet](http://puppetlabs.com/);
 Currently, only Debian based systems are supported. We gladly accept Pull Requests ;)
 
 You can use this module best by defining the following hiera values (replace 5.5 by actual desired version):
-  mysql_package: mariadb-server-5.5
-  mysql_version: 5.5
-  mysql_my_class: mariadb
+  mariadb_package: mariadb-server-5.5
+  mariadb_version: 5.5
 
-In your manifest you can then simply include class mysql.
+or passing parameters to the mariadb class.
 
+Usage
+-----
 
+    node mariadb inherits default {
+      class { "mariadb":
+         version => '5.5',
+         package => 'mariadb-server'
+      }
+      class { "mysql": 
+        root_password => 'test',
+        package => 'mariadb-server',
+        require => Class['mariadb']
+      } 
+    }
+
+This example uses mysql puppet module from example42/mysql (http://github.com/example42/puppet-mysql/).
 
 License
 -------
