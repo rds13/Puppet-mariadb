@@ -1,7 +1,7 @@
 class mariadb (
+  $package = hiera( 'mysql_package', 'mariadb-server' ),
   # https://github.com/example42/puppi/issues/60
-  $version = hiera( 'mysql_version', '' ),
-  $package = hiera( 'mysql_package', '' )
+  $version = hiera( 'mysql_version', '' )
 ) {
 
   if ( ( $mariadb::version == '' ) or ( $mariadb::version == undef ) ) {
