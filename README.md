@@ -7,8 +7,8 @@ Currently, only Debian based systems are supported. We gladly accept Pull Reques
 
 You can use this module best by defining the following hiera values (replace 5.5 by actual desired version):
 
-    mariadb_package: mariadb-server-5.5
-    mariadb_version: 5.5
+    mysql_package: mariadb-server
+    mysql_version: 5.5
 
 or passing parameters to the mariadb class.
 
@@ -17,8 +17,7 @@ Usage
 
     node mariadb inherits default {
       class { "mariadb":
-         version => '5.5',
-         package => 'mariadb-server'
+         version => '5.5'
       }
       class { "mysql": 
         root_password => 'test',
