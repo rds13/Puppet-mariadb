@@ -8,3 +8,4 @@ description 'Adds the MariaDB APT repository, installs MariaDB.'
 project_page 'http://www.github.com/Enrise/Puppet-MariaDB'
 
 dependency 'example42/mysql', '>= 2.0'
+dependency 'puppetlabs/apt', '>= 1.1.0'
